@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.top-controls {
+    margin-bottom: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.copy-all-btn,
+.toggle-print-btn {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.copy-all-btn:hover,
+.toggle-print-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.copy-all-btn:active,
+.toggle-print-btn:active {
+    transform: scale(0.98);
+}
+
+.copy-all-btn.copied {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    margin-top: 30px;
+}
+
+p {
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.form-section {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.form-section:last-child {
+    border-bottom: none;
+}
+
+.checklist {
+    background-color: #f9f9f9;
+    padding: 16px;
+    margin-bottom: 20px;
+    border-left: 3px solid #000000;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.checkbox-item:last-child {
+    margin-bottom: 0;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    margin-top: 2px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-item span {
+    flex: 1;
+    color: #333333;
+}
+
+.response-textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 0;
+    resize: vertical;
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.response-textarea:focus {
+    outline: none;
+    border: 1px solid #000000;
+}
+
+.field-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    gap: 16px;
+}
+
+.word-count-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.word-count {
+    font-size: 13px;
+    color: #666666;
+}
+
+.word-warning {
+    font-size: 13px;
+    color: #cc0000;
+    font-weight: 600;
+}
+
+.copy-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.copy-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.copy-btn:active {
+    transform: scale(0.98);
+}
+
+.copy-btn.copied {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .field-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .copy-btn {
+        width: 100%;
+    }
+}
+
+/* Print Mode Styles */
+.print-content {
+    display: none;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+body.print-mode .print-content {
+    display: block;
+}
+
+body.print-mode .print-content.empty-content {
+    display: none;
+}
+
+body.print-mode .response-textarea {
+    display: none;
+}
+
+body.print-mode .field-controls {
+    display: none;
+}
+
+body.print-mode .copy-all-btn {
+    display: none;
+}
+
+body.print-mode .copy-btn {
+    display: none;
+}
+
+body.print-mode h2 {
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body.print-mode p,
+body.print-mode .form-section p {
+    font-weight: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body.print-mode .print-content {
+    font-weight: normal;
+}
+
+body.print-mode .checklist {
+    background-color: transparent;
+    border-left: none;
+    padding: 0;
+    margin-left: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body.print-mode .checkbox-item {
+    list-style-type: disc;
+    display: list-item;
+    margin-left: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body.print-mode .checkbox-item input[type="checkbox"] {
+    display: none;
+}
+
+body.print-mode .checkbox-item span {
+    font-weight: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+@media print {
+    .top-controls {
+        display: none;
+    }
+    
+    .field-controls {
+        display: none;
+    }
+    
+    body {
+        padding: 0;
+    }
+}
